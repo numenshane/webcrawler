@@ -12,10 +12,12 @@ class YoutubeSpider(Spider):
         self.index=0
         super(YoutubeSpider, self).__init__(*args, **kwargs)
         print chardet.detect(search_flag)['encoding']
-        if re.search('ascii', chardet.detect(search_flag)['encoding']):
-            self.search_flag = search_flag
-        else:
-            self.search_flag = unicode(search_flag, 'gbk').encode('utf-8')
+	self.search_flag = search_flag
+        #if re.search('ascii', chardet.detect(search_flag)['encoding']):
+            #self.search_flag = search_flag
+        #else:
+            #self.search_flag = unicode(search_flag, 'gbk').encode('utf-8')
+            #self.search_flag = search_flag.decode('gbk','ignore').encode('utf-8')
 
         self.start_urls = [
             "https://www.youtube.com/results?search_query=%s" % self.search_flag
