@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Make sure the pip tool installed already!!!"
 pip install Scrapy
 cp /usr/lib64/python2.6/lib-dynload/_sqlite3.so /usr/local/lib/python2.7/sqlite3/
 pip install chardet
