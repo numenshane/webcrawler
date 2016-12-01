@@ -8,7 +8,6 @@ pip install chardet
 scrapy crawl example  >/dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo "suc"
-    cp crawldownload.sh /usr/bin/crawldl
 else
     echo "failed"
 fi
