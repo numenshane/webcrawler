@@ -35,13 +35,13 @@ class YoutubeSpider(Spider):
             href = "http://www.youtube.com" + quote.xpath('.//@href').extract()[0].encode('utf-8')
             id = quote.xpath('.//@href').extract()[0].encode('utf-8').split('/')[1]
             #print id,name,href
-            if re.search(self.search_flag, name):
-                print '%s,%s' % (name, href)
-            	youtubeItem['id'] = id
-            	youtubeItem['name'] = name
-            	youtubeItem['href'] = href
-            	youtubeItem['search_flag'] = self.search_flag
-            	yield youtubeItem
+            #if re.search(self.search_flag, name):
+            print '%s,%s' % (name, href)
+            youtubeItem['id'] = id
+            youtubeItem['name'] = name
+            youtubeItem['href'] = href
+            youtubeItem['search_flag'] = self.search_flag
+            yield youtubeItem
 
         nextPage = quotes.xpath('//*[@id="content"]/div/div/div/div[1]/div/div[2]/div[2]/a[7]/@href').extract()[0]
         print nextPage
